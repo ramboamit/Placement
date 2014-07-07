@@ -1,0 +1,92 @@
+1. What the different issue in multi-threading ? What is the difference between mutex and semaphore.
+2. Race-condition, Semaphore
+3. Customer Producer problem,
+4. Semaphore
+5. how to find your system is big endian or not.
+6. what is page fault and why it occur..
+7. what is virtual memory.
+8.  page replacement Algorithm LRU
+9. what is Inter process communcation ,types and which one is fast and why?
+10. what is fragmentation …..brief decusion on external fragmentation.
+11. OS concepts – virtual memory, paging, process states, paging algos.
+12. Process vs threads
+13. dea on address space of process and threads
+(based upon threads share data and heap but have separate stacks )
+14. difference between windows and linux.
+15.  Write a program to create single thread and print “Hello World”, stating all the arguments of createThread function?
+16. Write a code to implement LRU cache and then implement full cache memory?
+17. process threads…stacks heaps. a minor system design on component in their system. how they are shared between…tradeoffs…
+18. Lock variable and their implementation (OS)
+19. multi-threading
+20.  Lot of OS questions . Mutex,semaphore,Deadlock ,Virtual memory , Scheduling algos .
+	Then he gave me a Code, and asked to make it Thread Safe .
+21. Multi Threading , Multi Process and Context switching concepts(in depth)
+22. What’s a Process ? What are various sorts of Process Scheduling Algorithms. Design a data structure which can be efficiently used to schedule processes based on their priorities. Further they added that Priorities of some processes can change any time and we should be able to pick that process which is having maximum priority (Min Heap concept). Also there can be many processes of same priority. Some discussions on approaches.
+23. : Basics of synchronization , test and set, locks, mutex. (wrote a code and kept on adding constraints ,asked if code would work in mutiprocessor, uniprocessor, multithreaded system).
+24. Given a 20 GB file and 2GB RAM, how to parse it and detect where to break it, concepts of memory management
+25. Code for deadlock and how to resolve.
+26. What is singleton design pattern? Its implementation. Race condition in this pattern and how to remove it.
+27.	What is multithreading? How is it implemented? User-level and Kernel-level threads. What their advantages and disadvantages?
+28.	What is race condition? Implement a C function with race condition.
+29.	Some questions on Inter Process communication.
+30.	Solution of Producer Consumer Problem.	
+31. What is flow control in TCP?
+32.	What is virtual memory? What are the advantages of it? If we have infinite RAM then should we use virtual memory or not and why?
+33. Error handling in the system , Core dumps ,etc
+34. IPC communications, Mutex/critical section/semaphores	
+35. Priorities of OS programs , process and thread differences. How to handle the Generic functions , like Void pointers
+36. Big & Little endian – definitions, representations, write it down, swap them, etc
+37. Write a program to implement memcpy() on your own
+38. Difference between library call and a system call
+39. Priority inversion in a RTOS and its solutions
+40. Timer module code // you need to write code for the timer module which actually handles timeout functionality for all clients and execute handlers of client at timeout. (things they looked for are how you design a given problem, callback functions, function pointers,etc)
+	Questions on Call back functions
+	Questions on function pointers
+	Program to Reverse a single linked list
+	Program to Detect loop in a single linked list
+41. Prioritized processes, weighted round robin
+42. Sw watchdog timers
+43. Memory management
+	Mem leaks & corresponding tools
+	Buffer overflows and impacts/problems from that
+	Deadlock, methods to avoid, prevent, etc
+	Semaphore, mutex, busy wait
+	code for memcpy and problems, covering all error scenarios.
+44. Stack corruption
+	Hacking through stack smashing
+	Program debug
+	Priority Inversion,ex
+	Race conditions,ex
+	Semaphore, mutex, ex
+	Strcmp, pgm,ff ends it
+	Arbit linked list pgm
+	Memcpy pgm, possibilities like overlapped memory address copy.
+	Small general DI puzzle
+	Pointer subtraction	
+45. Questions regarding scheduling concepts, how cpu burst length is predicted for SJF scheduling, exponential averaging, etc.
+46. What is fork? How many total processes on execution of three frok statements. Justify your answer with diagram
+47. What is the difference between logical and physical addresses?
+48. When does a process create a child process?
+2.	What happens in the background when fork() / pthread system call is used?
+3.	What are the different IPC mechanisms?
+4.	How does a pipe work? What happens when pipe symbol ‘|’ is used in command line?
+5.	What is compaction and what are its disadvantages?
+6.	What are the steps in establishing socket connection in client & server side?
+7.  He asked me to write a thread safe code for the given scenario.
+    	given two writer threads and two reader threads . give a mechanism to handle the writer and reader threads. The writer thread writes a value 1 2 3 4 in a queue or array and reader thread reads it and print the output as 1 , 2 ,3 ,4 …..In the same order as given and only once…
+    	->i handled it with a binary semaphore and a single queue for both reader and writer..
+8. Different types of scheduling and what type of scheduler does linux have and why.
+9.  doeslinux have preemptive scheduling and few questions on virtual memory.
+10. Given a flash memory where you can perform read or write only sector-wise (you can’t read a particular byte/ word in a sector). Write a function to write a word to particular sector. The answer is very simple if you use bit-wise operation.
+	Then he asked what happens when a CPU is powered, how bootstrap works and interrupt vectors.
+	He too was very happy and the interview was very short when compared to others. My friends were interviewed for more than one and half hour.
+11.  Computer fundamentals, dll, multi-threading, How debuggers work, TCP/IP.
+Prob: Given a binary tree. Given a leaf node, you have to convert the binary tree in such a way that the leaf node becomes the root node.
+12. dining-philosopher, humming codes
+14. Suppose in a system, some processes are already running. Now when an user will give new task(or process), he will give a list of processes his process is dependent upon. Some of those may be running, some may not be running right now. You have to ensure that there is no contention, i.e., If a process, Pj is dependent on process Pi,
+	Pj should not execute along with Pi. How will you ensure that? Complete algorithm with code was required. The interviewer went on complicating the problem.
+	At last I used graph and 3 hashmaps to solve the problem. He was ok with it.
+15. Discussion on threading framework.	
+16. Questions on threading.
+17. What is a thread safe code? Explain.
+18. What is a process and thread? Differences?
