@@ -1,0 +1,26 @@
+1. He also started asking some networking question. Like TCP/IP, socket connection.
+How the chat between 2 user work internally, internally how the packets flows between layer. And suppose user A send “Hi” message to user B and user B just shutdown the system. What will happen in that case.
+
+2. Design a Chip-Encryption system. Which will do following operation:
+1. Take a word from user
+2. Encrypt the word by some Private or public key cryptography or any other algo.
+3. Transmit the encrypted word by TCP or UDp or SSL.
+Design the class diagram using OOD. Which design pattern you are using to achieve this.
+4. Public-key cryptography and
+	Q. question related to Certificate authority.
+5. Network Traffic measurements.	Udp vs tcp, diff
+6. What happens in the background when you type the URL www.google.com ? You need to answer it with respect to the 7 layers of OSI architecture.
+7. write socket programs, explain the characteristics of socket, binding.
+8. Then some questions on networking basic-7 layers of networking, OSI architecture, difference between frame and packet, routing and switching.
+9. The interviewer asked me about layers in OSI and IP architecture and complete details of application of each layer along with protocols used in them. Then he asked me about the NIC -how it works and the internal implementation. What happens when you connect a pc over a new network. What is CSMA-CD with example.
+10. Question on determining the subnet mask over a large network consisting of several sub-networks with a specified IP range available to ISP.
+11.  About routing protocols.
+12.  How to counter count to infinity problem?
+	Ans: Told several approaches and he is expecting poission reverse which I could not tell.
+13. What are the protocols that you know in transport layer?
+2. What is the difference between UDP and TCP?
+3. What is the connection end point in TCP ?
+4. What is the systemcall which creates a seperate connection? (Indirect question about Accept system call)
+5. Which system call is used to poll among fds? (select or epoll_wait)
+Why ICMP is used?
+11. What are the protocols that you know at MAC layer ?
