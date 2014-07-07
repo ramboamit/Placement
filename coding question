@@ -1,0 +1,627 @@
+1. Given a tree, write the In-order traversal. I wrote in 2 min using recursion.
+	Next addition was, can you write it using iteration.			-> 		http://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
+	Preorder - http://www.geeksforgeeks.org/iterative-preorder-traversal/
+	Postorder - http://www.geeksforgeeks.org/iterative-postorder-traversal/
+
+2. n a plane n points (X and Y) is given. How will you find out maximum co-liner points. Extend this algorithms. it for point(x,y,z) in 3D plane. 
+
+4. Design a LRU cache - http://www.geeksforgeeks.org/implement-lru-cache/
+
+7.  Given two linked lists each of which represent a number, write a function that returns a linked list that represents the sum - BLOG.
+
+8. Given a binary tree in which the node structure has an additional field called “next” which of pointer to tree node type, fill up this field of each node to point to the next node at the same level (NULL if last node). - BLOG
+
+9. Sort an almost sorted Array. An almost sorted Array being an Array in which a number is at the most k positions away from its position in the sorted Array.
+
+10. Given a floor of dimensions 2 x W and tiles of dimensions 2 x 1, write code to find the number of ways the floor can be tiled - F(N) = F(N-1) + F(N-2)
+
+14. You are given a 2D grid in which each cell is either empty, contains an entry “D” which stands for Door, or an entry “W” which stands for wall (Obstacle). You can move in any of the four directions from each empty position in the grid. Of course you cannot move into a cell that has “W” in it. You need to fill each empty cell with a number that represents the distance of the closest door to that cell. - You can just do BFS with multiple sources. This works in exactly the same way as regular BFS, but instead of starting with just one node, you would put all your sources (doors) in the queue at the beginning. That is, make an initial pass over the grid to find all doors and start your BFS queue with all of them at distance 0. Then proceed with BFS as normal. This solution is O(grid size), which is optimal because you have to look at all the input.
+
+16. Write a program to find longest repeating substring In a given string running code were required covering all base cases - The maximum lcp after the construction of the suffix array.
+
+17. Write a program to convert a tree to doubly link list in post-order fashion only change of pointer are allowed that is left pointer can work as previous and right pointer s as next - BLOG
+
+18. How to do a external merge ? "Since the Files are already sorted. All you have to do is a external merge till you get 1 million elements. You don't need any more items from the Files." - https://en.wikipedia.org/wiki/External_sorting
+
+19. Write a program to convert a decimal number into binary your code should work on both big endian and small endian machine. U have given a variable which tell u whether machine is big endian or small endian - misc folder in preparation.
+
+20. What is quicksort? Implement for a linked list and tell complexity.   http://www.geeksforgeeks.org/quicksort-on-singly-linked-list/
+
+21. Implement a calculator which takes a maths expression and evaluates it and prints the result - http://www.geeksforgeeks.org/expression-evaluation/
+	http://geeksquiz.com/stack-set-2-infix-to-postfix/
+	http://stackoverflow.com/questions/1946896/conversion-from-infix-to-prefix
+	All such conversions - Karamunchi book
+		
+22. Disjoint set implementation. - kruskals in graph in prep.
+
+23. Max elements in sliding window of size k over int array of size n. - http://www.geeksforgeeks.org/maximum-of-all-subarrays-of-size-k/
+
+24. Median of stream of numbers  -- 	http://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
+
+25. function for sorting a priority queue.
+			class Foo
+			{			};
+			bool Compare(Foo, Foo)
+			{				return true;			}
+			int main()
+			{
+				priority_queue<Foo, vector<Foo>, function<bool(Foo, Foo)> > pq(Compare);
+				return 0;		}
+
+
+26. Matrix Multiplication -		http://www.geeksforgeeks.org/dynamic-programming-set-8-matrix-chain-multiplication/
+
+27. Divide number and return result in form of a string. e.g 100/3 result should be 33.(3) Here 3 is in brackets because it gets repeated continuously and 5/10 should be 0.5.
+
+28. questions on sorting, complexity and comparison with other sorting techniques
+
+29. code for singleton class, with all boundary conditons like double check condition   --   http://www.codeproject.com/Articles/1921/Singleton-Pattern-its-implementation-with-C
+
+31. Given a file with millions of words, need to find top K words on the basis of occurrence http://www.geeksforgeeks.org/find-the-k-most-frequent-words-from-a-file/
+
+32. algorithms book by sedgewick 
+
+33.  Given a file containing billions of words, need to find top K words. Other variations like the file size is 100 MB and we can read only a chunk of data at a time, how to maintain that.
+
+37. Sorting a linked list using quick and merge sort - http://www.geeksforgeeks.org/merge-sort-for-linked-list/
+
+39.  find the largest and second largest element in array give 4 different approach - The min heap method
+	This method is mainly an optimization of method 1. Instead of using temp[] array, use Min Heap.
+
+	Thanks to geek4u for suggesting this method.
+	1) Build a Min Heap MH of the first k elements (arr[0] to arr[k-1]) of the given array. O(k)
+	2) For each element, after the kth element (arr[k] to arr[n-1]), compare it with root of MH.
+	……a) If the element is greater than the root then make it root and call heapify for MH
+	……b) Else ignore it.
+	// The step 2 is O((n-k)*logk)
+	3) Finally, MH has k largest elements and root of the MH is the kth largest element.
+	Time Complexity: O(k + (n-k)Logk) without sorted output. If sorted output is needed then O(k + (n-k)Logk + kLogk)
+	All of the above methods can also be used to find the kth largest (or smallest) element.
+
+40. Kth order statistics - Finding the kth largest or smallest element in O(n) time. - http://www.fusu.us/2013/06/p4-order-statistics-kth-smallest-or.html
+
+40. Find lexicographic position of string http://www.careercup.com/question?id=15006717
+
+41. Implement GCD function.			
+		gcd_iter(int u, int v) {
+			int t;
+			while (v) {
+				t = u; 
+				u = v; 
+				v = t % v;
+			}
+			return u < 0 ? -u : u; /* abs(u) */
+		}
+
+		int gcd(int u, int v) {
+			return (v != 0)?gcd(v, u%v):u;
+		}
+			
+42. Area under histogram - http://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+
+43. largest subrectangle with all 1s in a binary matrix using histogram method - combination of prev one and blog.
+
+45. Rotate a matrix by 90 degrees. - Think layer by layer.
+
+46.  Given a huge file 100 million integers. He further divided the file
+	to 100 files with 1 million integers each. Each file is sorted. Find the efficient way to find smallest ‘m’ integers. Note ‘m’ is very less in comparison to a million
+
+47. Given a Binary Tree and a sum k.Print all the paths with sum = k. Path can or cannot start with root
+
+48. Given a list of n mp3 songs. Play them randomly. No song should repeat until all the others are played - Create an array of n numbers. Generate a random number between 0 and n-1. play that song. now replace n-1th item with that position. Again generate a random number betwn 0 and n-2 and play that song and swap that number with the number at n-2th position. Carry on until n-n = 0, and again set n = length of array-1.
+
+49. Count number of each digit in numbers from 0 to n - Solved in ALGOS, DP, a to b
+
+51. All varieties of scheduling problems.
+
+61. Given a number find the next higher number from the combination of given numbers.
+	34722641
+	A. Split the sequence of digits in two, so that the right part is as long as possible while remaining in decreasing order:
+	34722 641
+	B. Take the last digit of the first sequence, and swap it with the smallest digit in the second that is bigger than it:
+	3472(2) 6(4)1
+	->
+	34724 621
+	C. Sort the second sequence into increasing order:
+	34724 126
+	D. Done!
+	34724126
+
+63. How does strtok() works. How can you make it thread safe -	http://stackoverflow.com/questions/21097253/how-does-the-strtok-function-in-c-work
+	To make it thread safe use strtok_r(). To make anything thread safe, we use _r which makes it reentrant. A process is called REENTRANT if it can be interrupted in the middle of its execution and then safely called again ("re-entered") before its previous invocations complete execution. 
+
+64. You have a stream of incoming integers. How will you store these numbers and implement following functions : GiveMax(), GiveSecond Max(), Delete Max(), DeleteSecondMax (), Add , Remove an element - max heap + hashing to remove. If current max from min heap is not found in the hash table then it means that it has been removed before. When deleting item, delete only from the hash table. Later check hash table for the presence of any number.
+
+65. multiply 2 numbers using minimum number of '+'
+
+		temp1=log10(i); 
+		temp2=log10(j); 
+		k=pow(10,temp1+temp2); 
+		cout<<k; 
+		
+	Similarly we can perform devide also
+		cout <<  pow(10, (log10(9) - log10(3)));
+	For example, here is a pseudocode implementation of ancient Egyptian multiplication showing how to multiply two arbitrary integers a and b (a greater than b) using only bitshifts and addition:
+	c = 0
+	while b ≠ 0
+		if (b and 1) ≠ 0
+			c = c + a
+		left shift a by 1
+		right shift b by 1
+	return c
+	Another example is a pseudocode implementation of addition, showing how to calculate a sum of two integers a and b using bitwise operators and zero-testing:
+	while a ≠ 0
+		c = b and a
+		b = b xor a
+		left shift c by 1
+		a = c
+	return b
+
+66. A string of length n and an integer m was given, give an algo. to rotate the string counter clockwise by m.
+	For arr[] = [1, 2, 3, 4, 5, 6, 7], d =2 and n = 7		-		http://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
+	A = [1, 2] and B = [3, 4, 5, 6, 7]
+	Reverse A, we get ArB = [2, 1, 3, 4, 5, 6, 7]
+	Reverse B, we get ArBr = [2, 1, 7, 6, 5, 4, 3]
+	Reverse all, we get (ArBr)r = [3, 4, 5, 6, 7, 1, 2]
+	
+	Method 2:
+	(A Juggling Algorithm)		-		http://www.geeksforgeeks.org/array-rotation/
+		
+68. Egg breaking puzzle can be solved by binary search also. Find other solutions to it.		http://datagenetics.com/blog/july22012/index.html
+
+71. Median of Medians algorithm		https://en.wikipedia.org/wiki/Median_of_medians
+
+
+73. Parallel processing to check is a string has balanced parenthesis or not - http://www.glassdoor.com/Interview/How-to-build-a-distributed-algorithm-to-compute-the-balance-of-the-parathenses-QTN_128554.htm
+
+77. Count the trailing zeros in factorial of a number N? (5! Has number of 0’s = 1)
+	For example, 53 > 32, and therefore 32! = 263130836933693530167218012160000000 ends in
+	 summation over n/5^i while 5^i <= n
+
+78. Generate random number generator (mod 7) using (mod 5) -		http://stackoverflow.com/questions/137783/expand-a-random-range-from-1-5-to-1-7
+
+80. Two rectangles are given in two D space. Find if these are overlapping or not -
+	if (RectA.X1 < RectB.X2 && RectA.X2 > RectB.X1 &&
+		RectA.Y1 < RectB.Y2 && RectA.Y2 > RectB.Y1) 
+.
+88. Buy and sell stock prices - once overall or one transaction each day.
+
+90. Given an array of numbers find the maximum count of duplets and triplets such that there sum is a multiple of three. Number that has appeared once can’t be included anywhere else.	I solved this question using a property of modulus.
+
+92. Given array of N integers ranging from 0 to N-1. Output maximum repeating integer. Use only O(1) memory.
+
+93. Two sorted arrays are given. Find median when both arrays are merged and sorted. - Compare median of both arrays. Accordingly select right half or left half array. Repeat. O(log n)			http://www.geeksforgeeks.org/median-of-two-sorted-arrays/
+
+94.  Find the distance between two nodes in a binary tree, no parent pointers are given.
+
+96. Implement K stacks in an array .( Algo )
+
+99. Questions on sorting like best algorithm if u consider (no. of swaps, no. of comparisons etc)
+
+100. Sorting words in a large file.
+
+3. Suggest a way to search in sorted link list in better then O(n) time . ( Skip lists )
+
+4. Find the mean and median of the elements such that elements are dynamically added at runtime( only approach).
+5. Print last 10 lines of a very large string.
+6. Insert an element in a sorted circular singly linked list. Pointer to any node of the list (may be denoted as the head) and pointer to the new node will be given as input. Generate test cases for your code. Check for all corner cases.
+7. He asked me to write the code to clone a singly linked list with next and random pointer and told me not to worry about any space complexity.  A fairly easy one. Solved it using a hash.
+8.  In continuum to the previous question, he asked me to rewrite the above code without using any hash. Did it very quickly :P. He was really happy and chatted with me for a while.
+9. He asked me to write a function which will connect all the nodes in a binary tree at the same level
+110. He explained an use case of MS Excel: we can select multiple columns in excel file and drag them together left or right. He then asked me to write the code to implement the aforementioned scenario on arrays. The input will be, an array, left and right index of a sub-array (multiple columns) and a destination index (either in left or right of the sub-array). After scratching for a few moments, I gave him an O(n) solution with left and right shift using flip method. He was really impressed and praised my handwriting once again (God is great :)).
+11. He quickly moved to the last question. A file with numbers from 0-9999999 (each number in a line) is given. How to sort the content. I gave him a solution with radix sort (as maximum 7 digits are possible for each number). Then he posed a constraint of very less RAM available. I discussed a modified external merge sort like algorithm with him. But then he told me to minimize the huge time taken by external merge sort. Then he gave a hint as “Use bits”. So I told him, to use a 10^7 size vector (which actually uses one bit for one boolean). He was okay with it.
+12.  Insert an element in a sorted circular singly linked list. Pointer to any node of the LL will be given as input
+13.  Given a pointer to a circular linked list, delete that node
+14. Given a set of rectangles of varying length and breadth, find out the maximum height stack you can form with them such that if rectangle R1 is on top of rectangle R2 then length(R1)<=length(R2) and breadth (R1)<=breadth(R2)
+15. Given the number of braces(opening +closing), find out the number of valid combinations you can form with them.
+16.  Difference between HashMap & LinkedHashMap.
+17. Print cousins of a given node (Not sibling)
+18. Implement 3 stacks in array, all approaches and code
+19. Longest path in a tree with just one bend. May or may not start with from the root. (Complete code)
+20. Check if a tree is a subtree of another. (Code)
+21. Convert a given number to Roman numbers.
+22. Given two string str and pat. Find minimum window in str which contains all characters from string pat.
+23. There is a stream of characters and at any time we need to find and remove (means set occurrence = 0) character which has maximum occurrence till now. Design data structure and algorithm for same. (I used standard Heap and Hash table setup, then was asked if we can replace lg(n) Heap operations with some efficient operation in practical scenario. I came up with doubly linked list and moving character to front on basis of its occurrences).
+24. Given list of expressions:
+	a = 10
+	b = a++
+	c = a + b
+	d = c*b + a*c
+	Print out value of last variable (in our example, it is d). First illustrate algorithm and then code in 1 hour.
+25. gcd of two numbers.	
+26.  given an array using in-place operation u have to put odd number in odd indexes and even number in even indexes. Assume array of even length and half of it will be even numbers (seems easy but as u cannot use another array and the order of number should not be change it was a good question took me while to implement the solution i think of)
+27. Build and find minimum in a segment tree.
+28. Store a binary tree - Can't we just store the numbers of the nodes, like i, left child-i*2, right child -(i*2)+1
+29. How to store a binary tree in a file & then read back.(It is not necessarily a BST)
+	First I answered that I would store level-order traversal of the tree.
+	He then asked me how I would maintain the nodes at various levels (which I was unable to answer). So, I changed my approach and told that: I would store in-order and pre-order traversals of the tree from which the original tree can be easily retrieved.
+	But then he told me to optimize my approach (As this approach would require twice the original space to store the data in the nodes). I could not further optimize my approach (However the better approach was to use parenthesization.
+30. Find integer part of sqrt of given number. Initially I gave o(root(n)) solution. Later solved with binary search(O(logn)).
+31. . Given an array of integers. replace each number with next higher number on its right side , which is nearer.(if not present than keep it as it is.)
+	for e.g. input – > 3 4 6 1
+	output->4 6 6 1
+
+	I suggested we can traverse from right side , we will take extra array (o(n) space complexity here) and in that array , we would store index of next higher nearer number.
+	so it would be like
+
+	if (a[i] < a[i+1]
+	  then store i+1;
+	else
+	   traverse using index stored in auxiliary array 
+	Since we needed extra space to store indexes, he asked that the input is array of a structure which has number and higher Index, 2 fields. So that we don't need extra space and extra traversal.
+
+	class Node {
+	   int val;
+	   int higher;
+	}
+	He was very interested to see how i keep track of indexes and how i traverse between them. It is o(n) with o(1) space complexity. (when we have a[i]>a[i+1] we don't do linear search , but we jump using the indexes, so its not o(n^2)) It was hard to convince him on complexity.
+32. given a binary tree. connect all the node at the same level. each node would have left,right and nextSibling pointers. we need to fill nextSibling.
+	11. Given a read only linked list with next and random pointer , clone the list. I told him that i know the solution and explained him the approach. It was with the use of hashmap and takes o(N) extra space. Then he ask me whether I know a o(1) space solution, since I didn't knew, i was told to solve this. With this , he told that I can modify link list.
+	Initially I struggled, but with his help, in the end came up with working code. He was looking fine with implementation.
+33. Given a binary tree. Modify it in such a way that after modification you can have a preorder traversal of it using only right pointers. During modification you can use right as well as left pointers. Write complete code and dry run it for some test cases.
+34. Given 2 linked lists. Find out if they intersect or not. If yes, find intersection point .Write complete code for it.
+	I could not remember the simple way: find the length of the lists and simply move forward the shorter list by difference of the lengths and find the intersection point. Instead, I joined the end of first list at the end of the 2nd list and then went for cycle finding by Floyd Cycle finding Algorithm. Although both are O (n), but he was impressed as it was a new approach.
+35. Given a sorted array of 0’s and 1’s. Find out the no. of 0’s in it. Write recursive, iterative versions of the code and check for all test cases. - This can be done in the same way as going to the last col and first and starting from there. If it is 1, we can ignore the column as it will contain all 1, else we can ignore the row as it will contain all 0.
+36. Binary tree to doubly linked list in all approaches. 
+46. Print pascal triangle and your output should be same as pascal triangular form (have to consider the space separation) .I told him two approaches and wrote the code.
+47. Find the square root of any number (square root can be a real number) without using any library function .
+	I told him an approach using Newton-Raphson method. It was faster but he asked simple and optimal method so then i suggested binary search method ( O(log n)) and I was asked to code it and dictate and he ran the code on his system also.	
+48. Find the k root of a number n. Mention the special cases, if any.
+49. Given a connected graph with n-1+k edges and k being less than 10. Convert this graph to a tree removing the most weighted set of edges.
+50. Given a set of coins n with each coin i having Pi probability to give heads. Find the probability of getting k heads, when all coins are tossed together.
+51. Given a random function which gives some value in the range [-1,1]. Find the value of PIE.
+52. Given a set of currencies and the exchange rates from each currency to another. Find if there exist any cycle of exchanges after which the original value of the amount increases.
+53. Given a set of restaurants (the number being quite large) and its geographical location(x,y) , you are allowed to do an significant amount of pre-processing on it. Now suppose there are x customers located at position (s,t), design an efficient algorithm to find the k nearest restaurants to these customers.
+( This problem is the famous KNN problem- the solution they were expecting were of grid files )
+54. You are given a generic tree. Design a structure for it. Now for every node of the tree make the leftmost child of the node as a duplicate of the node itself and return the root of the tree.
+55. Had to find maximum profit in an array of stocks prices for consecutive days in two cases, one I can sell and buy any number of times I want, second, I can only buy and sell one time.
+	Another question was to define a function “inorder_it(Node A, Node root)” which will return the next node in a binary tree to a particular node A. Was asked to write code for both of them.
+56. Then we discussed the problem of sorting rows of a file based on a particular column. Like as in Excel file, you can sort file based on roll_no, first name, last name, any column you want.
+	File is very large, so you can’t just store the whole file into memory.	
+57. You are given various time intervals and you have to merge the overlapping ones.
+Me: I had already coded it in the Code Ninja questions on the amazon’s website, so he just asked me the approach to the question.
+58. Given two words, tell if they are anagrams or not. Extend your solution for unicode as well.
+59. You are given a file with many words. You are given a word as an input and you have to find every anagram of that word in the file.
+60. Given a number, find the next minimal greater number with same number of set bits(Approach+code)
+61. Connecting all nodes at the same in Binary Tree(Approach + code )
+62. Garbage collector
+63.  Finding median in array
+64. Deleting a node from LL provided the tail nodes points to mid element. After deletion property should be maintained(Approach)
+65. Circular Buffer array problem(Approach + code)
+66. You are given an array of length k and it have numbers from 0 to n (where k>>>n) in O(n) time and no extra space find occurrences of each element in O(n) time only
+67. You are given row and column wise sorted matrix you have to find and delete an element such that it is still sorted in O(n) time.
+68.  had to implement a T9 dictionary . insertWord function and populateWords were the two functions which I had to implement on paper(again no pseudo code).
+69. We were given the edges of the graph and we had to find if a cycle exist in the graph or not
+70. Given in facebook find an efficient way to find the mutual friends between you and one of your given friends.
+71. For two very long numbers given, find the product of these numbers in an efficient way.
+	Hint: using binary multiplication effectively.
+72. Find the SQRT of a number.
+73. Simulate Reversed level order traversal.
+74. Given a binary tree, change the right pointer of every leaf node to the next leaf node (right to it but may be on different level).
+75. Given a class with n people,where each people plays a game with all other people. Results are with you. You have to arrange them in a queue with a condition that, a[i] should have won a[i-1], for all I, you don’t need to care about a[i-2] . (a[i] may win or lose a[i-2]).
+76. Given a matrix with 1s and 0s, u have to construct a matrix such that a[i][j]=1, if only every element in ith row and jth column is 1, otherwise 0. You have to use constant space and O(mn) time complexity.
+77. Maze solve problem. Given a matrix with 1s and 0s, 0 represents free path, 1 represents blocked area, and you can move in any of the 8 directions. Find the path from source to destination and print it. Then he told me that he can change destination at run time. And asked me to do for that.
+78.  Had a general discussion about various data structures. Comparison of BST and hashmap ( relative advantages and disadvantages ). Applications of each.
+79. Implement a queue using 2 stacks. Then optimize the implementation.
+80. Suppose we have two functions void g() and void h(). The function h() has been called somewhere in the body of g(). Now using a debugger, we find that that the program crashes as soon as the return statement in h() ( at the end of function h() ) is executed. There is nothing syntactically wrong with the program. How will you debug the code ???
+My answer : The function h() has modified the return address on stack.
+81. This question was related to what he called conditional operator on an image. I had no idea what that was. So he explained it to me.
+	A monochromatic image is represented by a MxM matrix Image0. We have another WxW matrix Op ( W<=M, W is odd ). Create a new MxM matrix Image1 such that each pixel Image1(i,j) is the summation of the product of overlapping pixels when the pixel(i,j) of Matrix Image0 is aligned with the central cell of Matrix Op.
+	At first I suggested a naïve O(N2xW2) solution. He asked me to write the complete code. Using a getpixel function which returns the pixel value if the co-ordinates are valid and 0 for invalid co-ordinates, usually helps in such cases.
+	Then he told me that all the values in the matrix Op are equal. Optimize the implementation.
+	I was able to bring it down to O(N2xW).
+82. Fibonacci series. Just the recurrence relation and derive the time complexity of recursive implementation.
+	83. Write a function that takes n parameters and returns an n-dimensional array using those parameters as the dimensions. The expression a[i1][i2]…[in] should work.
+	For 1-d array, it’s trivial. For 2-d arrays of dimensions mxn, first create an array of m 1st-level pointers and for each pointer allocate an array of size n. He asked me to do it for k-dimensional array where k is a parameter. The real issue was implementing k nested loops, where k is not a constant value.
+	I was able to implement it using a single loop which runs from i=0 to i=k^k – 1. For each iteration, I calculated the various nested loop variables, say par(L)=i mod k^(L+1) , where L=0 represents the innermost loop and par(0) represents the innermost loop variable. So when par(t)=0 for some t, it’s obvious that either i=0 or the immediate outer loop, ie the loop L=t+1 has moved on to its next iteration. So the malloc statement between the loops L=t+1 and L=t has to be executed.
+	The interviewer was very impressed with the approach.
+83. The question started with the interviewer asking me to write a program to print “Hello World”. I just stared at him for a while. So he repeated the question :P He then wanted to know what the compiler does when it encounters the statement #include, whether the stdio.h file contains just the function declaration of printf or the definition too. Then we had a discussion on static and dynamic libraries.
+84.  Find the lenght of longest path in a binary tree(diameter). I gave a O (nlogn) solution. He wanted O (n) solution. did that
+85. You are standing at 0 0 and you have to get to i, j. Find the number of ways. Did that with recursion then with DP. Then he extended the question saying some edges are not traversible. Then edges have weights, find min weight path.
+86.  Delete all leaf nodes in a tree.
+87. Infinite stream of bits is coming, after every bit comes, you have to determine whether the number formed with bits till now is divisible by 3 or not, you cannot form the number as it will overflow at some stage.
+88. Imagine a binary tree lying on the floor with nodes as balls and edges as threads, you are given a pointer to a node. When you pick the tree from that node up what will be the structure of the tree. You have gravity changing the structure of the tree.
+90. There are two buckets- one having 100L water and another having 50L milk. A spoonful of water is taken from 1st bucket and added to 2nd bucket and the mixture is stirred, now a spoonful of the mixture is taken from the 2nd bucket and added to the 1st. Compare the final volume of milk in 1st bucket to the final volume of water in 2nd bucket.
+91.  A modification of Towers of Hanoi problem: Consider 3 towers A(source), B(auxiliary), C(destination) and n discs. All usual constraints of the original problem hold true, but a new constraint is added: No disc(s) can be moved directly from A to C or from C to A, B has to be used in between.
+	Solution: For n discs and towers A,B,C as source, auxiliary and destination respectively, consider the following function:\
+	Move(n discs, A,B,C)
+	{
+		If(n==1) print(nth disc, A->B->C);
+		Else
+		{
+			Move(n-1 discs, A,B,C);
+			print(nth disc, A->B);
+			Move(n-1 discs, C,B,A);
+			print(nth disc, B->C);
+			Move(n-1 discs, A,B,C);
+		}
+	}
+92. It will take O(3^n) time instead O(2^n) as in the normal Towers of Hanoi problem.
+	The interviewer seemed quite impressed with the solution.
+93. You are given an array whose each element represents the height of the tower. The width of every tower is 1. It starts raining. How much water is collected between the towers?
+	Eg. [1,5,3,7,2] – then answer is 2 units between towers 5 and 7.
+94. What is a height balanced tree. Give an O(n) solution to balance it. Then he changed the definition of a balanced tree as- a tree is balanced if every node in a particular level should have the same number of descendants (and not only direct children). And every node can have any number of children. I had to design the class and then write the code for it.
+95. Given an array of integers, find an index such that if you split the array into two parts the absolute value of the difference between the sum of elements in both parts had to be minimum. After giving him the logic, he changed it to split it into 3 parts such that sum of elements in all of them are equal. I had to code this one.
+96. There is a sentence that your friend knows, but while giving it to you, he lost all the spaces. You have to dictionary with you. How would you reconstruct the original sentence using it.
+97. You are given an encrypted file. You don’t know the key used to encrypt it. Like A might be mapped to B, B to some D and D to some other F. But you don’t know this encryption scheme. You have the dictionary with you. How will you decrypt the file? I suggested lots of solution like exhaustive searching, then using some variants to minimize the complexity. He gave me just a one word hint- histogram. So I gave him a logic that counting the frequency of every letter used in the dictionary. Then replace the most used letter in the file with the most used in the dictionary. And then compare words with the dictionary. In case of a mismatch back –track and use the second largest and so on. I also discussed with him that it could also have high complexity in worst case, but he moved on.
+98. A complete path in a tree is from a root to a leaf. A k-heavy path is a complete path whose sum of elements is greater than k. Write a code to delete all nodes which are not in any of the k-heavy paths.
+99.  Fibonacci series without using an array – this is a typical favorite question w.r.t. Dynamic Programming where you will asked not to use Memoization or any extra storage to store the values of the previous iterations.
+(More complicated version of the same problem: Generate Nth row of pascal’s triangle w/o using a 2D array of dimention N x N)
+200.  N-ary tree : find if a node exists in the tree with value = x. If yes, return true, else, return false.
+1. Find the lowest common ancestor of Binary Tree
+2. Design a bloom filter to remove the duplicates from an unsorted array !
+3. Explain quick sort and how it differs from other sorting algos with same run time complexity (like merge sort)
+4. Multiply two linked lists represented by numbers. Only one linked list must be used to do all additions and store the result i.e., intermediate additions should not be done with extra linked lists and finally computing the result.
+5. Given a BT check if there is a BST in it. If it exists print the largest BST in the BT.
+6. Given a large file with huge number of words group the anagrams of a word
+    	hai how are you. iahohw done woh.
+	o/p:
+	hai ->iah
+	how ->woh ->ohw
+	done
+	are
+7.  Find the LCA in Binary Tree
+    	He asked me to optimise the code with bottom up approach and gave lots of boundary conditions
+8.  Given a chess board of finite length , start postion of a knight , an end position.
+    	->find whether the end position is reachable by the knight.
+    	-> Number of minimum hops required to reach that position.
+     I came up with a BFS solution instantly . He posed several conditions in the same question as I have seen the question already.
+
+		b) He changed the question to infinite length chess board and if given two knights in a chess board .find minimum hops required for them meet.
+    	->gave a lot of space and time constraints.
+    	->asked me to write the complete code without STL.
+9. Given a linked list with random pointers , clone the linked list.
+    	Gave few solutions and he asked me to clone without manipulating the original linked list but with extra space. Came up with little tweaks using HashMap
+	Map< node * , node *> key is the node and value is the random ptr node.'
+10. Find the ceil and floor of a value in a given BST without extra space.
+    	if a BST contains 1 3 6 7 9 12
+         ->if the given value is 8 floor is 7 and ceil is 9.
+         ->if the given value is 9 both floor and ceil is 9.
+	P.S. Be cautious in explaining your projects.
+11.  Asked me about the different inter process communication methods.
+    	b) Which method is faster and why. Then he asked me to explain about shared memory
+12. Then code for malloc implementation given an array.
+13. Then she asked me to perform nibble wise swap in a byte of data. I considered it as a string and did normal swap of data. She wasn’t happy and asked me to try some other method. Suddenly, I thought of doing it in bit-wise
+	num = num>> 4 | num<<4;
+	I understood that they want their problems to be solved using bit-wise operations.
+	She was very happy with the solution.
+14. given a string which represents a decimal number return its binary representation.
+	Set a particular bit in a number.
+15. Given a binary tree, you have to print level order traversal of the tree (left child then right child) but every next level has to be printed in next line.
+16. Given a telephone keypad.
+
+	1 2 3
+	4 5 6
+	7 8 9
+	* 0 #
+
+	You can start from any number other than ’0′. You can move to the next number the way a chess bishop moves. You can go back to the same number. Any number should not contain * or #. Generate all possible six digit numbers.
+17. Given an array of strings. Find the maximum prefix among all the strings.
+Ans: First told about tries. Then went for trivial answer saying compare all the zeroth indices then first indices.
+18. Given an unsorted array, find the max j-i such that j > i and a[j] > a[i] in O(N).
+19. Given a rectangular cake and 3 persons have to share it. First person took a rectangular cut. How will you cut such that remaining two people
+	will get the same amount?
+	Ans: First told horizontal cut where interviewer surprised with the answer and asked for different solution.
+	Then told cut along a line such that it touches center of mass of both the rectangles.
+20. Given k-sorted lists. How will you sort the list in to the new whole array?
+	Ans: Standard Q. Then asked about time complexity.
+21. What if they are not sorted lists.
+	Ans: Sort the individual arrays first. Then told about heap solution which is not effective. But he is happy with the approaches
+22. Print a matrix in spiral order (Code)
+23. Given a pair of brace {}. Validate it. (Code)
+	Soln: using two variables (i.e open_count and close_count) and proceed further.
+24. Design a DS to perform
+	Insert
+	Search
+	Delete
+	get Random
+	All in O(1).
+	Soln: Focus on Delete and get_Random. On further analysis, only get_Random was required to me modified. Only a bit of tweak will serve the purpose.
+25. Given array of ints. Assuming total no. of elements is even. Need to tell whether this array can be grouped in sets of pairs such that sum of each pair is divisible by K.
+	eg: 0,2,4,8,12,20,18,4 and k=4
+	so (0,8), (2,18), (4,20), (4,12) is one such set in which sum of each pair is divisible by k. (Code)
+26. There is a vertical rod. Discs of various radiuses are inserted in it. When we will try to take out any disc then 1st all the discs above it has to be taken out. Taking out a disc and putting it back is counted as one step.
+Considering this, what will be the minimum no of steps in which these discs of various radius can be stored in sorted order in the rod.
+Only minimum no of steps was required. “How to sort” was not required. (Approach)
+27. Given array of ints. find ar[i],ar[j] such that j>i and ar[j]-ar[i] is maximum. Famous problem. (Code)
+28. Given two arrays of ints of size m and m+n in sorted order. merge it inplace. Famous problem. (Code)
+29. Given string.
+	Qusn: Find the char occuring max no of times.
+	Soln: Simple one. Take auxillary array of size 256 and maintain frequency of each char. Scan auxillary array and get the required char. O(k+n) where k=256 here.
+	Counter Qusn: Why O(k+n)? Why can’t it be O(n) only?
+	Soln: At the time of maintaining freq of each, compare to get max freq char also. No need to travel aux array again. O(n)
+	Counter Qusn: What if memory size is only 100 bytes?
+	Soln: Detailed one.
+	Counter Qusn: Assuming updating freq of each char takes 1sec, so it will take N secs roughly. How can we improve it?
+	Soln: Use multi threading for parallel programming.
+	Counter qusn: Will there be any issue?
+	Soln: In case one aquires lock, other one that needs lock will go in waiting. This adds extra time and so can take more than N secs.
+	Counter Qusn: How to improve this?
+	Soln: Detailed one.
+	And many more such counter questions.
+30. Assuming a new building is going to be constructed for IT official purpose. 75 floors. You are builder. This building will be on lease for diff companies.
+		i. How many lifts you will add in that building?
+		ii. At which floor each lift will stop?
+		Note: At each step, I had to identify the required data after analysis and then only data for the same was provided.
+		Soln (i): (As it is totally based on thought process, so counter question from your side is good point)
+		1. No of Lifts are determined by many factors. Major factors are height of lift and no of persons working in that building.
+		2. I was knowing height of building. To calculate no of persons, I asked size of each floor. It was 100 sq m each floor.
+		3. Each floor will have cubicles and other rooms and passages. Assuming 70% of total area is used by cubicles.
+		4. Each cubicle will have 4 persons. After calculation it came to be 40 employees per floor. So 3000 employee in whole building.
+		5. Next analysis was: In most of the IT company, the in/out timing is flexible. Generally in time is b/w 9:00-11:00 and out is b/w 5:00-7:00.
+		6. We have 2hrs of window in which all employee will use the lift. So no of lifts will depend on this factor also.
+		7. After calculation, it came out to be approx 9 lifts (which was a good no according to him).
+		Soln (ii): Now the qusn is at which floor each lift will stop.
+		8. AS we don’t know how many companies will be there in this building at any time, so it is advisable to provide equal chance for employees on the basis of floor no. rather than on the basis of company.
+		9. Best way would be to minimise the no. of stops of each lift.
+		10. This can be done by giving each lift equal no of floors on which it will stop.
+		11. It can simply be calculated as 75/9= 9 (round off).
+		12. So 1st lift will have floor buttons b/w 1-9, 2nd will have b/w 10-18 and so on.
+		13. This approach was best (according to him) for current scenario.
+		14. Remember that each floor should get equal chance and we don’t know how many companies will be there.
+
+31. Question – Find the next largest int of a given int such that it has same number of 1′s in binary
+32. Find max product subarray
+33. LIS modified ,
+	Get the peak point in stock market data ,
+	Max sub array sum in circular array
+34. Given an array of n numbers with repetition of numbers. You need to find the max length of continuous sub array with at max 3 unique elements.
+	For eg
+	array: 1 2 3 1 4 3 4 1 2
+	ans: 6 (3 1 4 3 4 1)
+	Solution: Time complexity O(n)
+	Extra Space O(1)
+36.	 You are given two binary trees. You need to tell that if one tree is rotated 90 degree and placed at bottom of that tree and each leaf nodes at max depth of two trees will meet each other or not.
+		for eg:
+		lets assume () as a node
+		Tree 1
+
+
+			  (1)
+			  /  \
+			(2)  (3)
+			 \   /
+			 (4,5)
+		node 4 and 5 are overlapping
+		Tree 2
+			 (1)                     (4)
+			/   \                      \
+		   (2)  (3)  => Rotated one    (2)  (3)
+		   /                             \  /
+		  (4)                            (1) 
+		So it returns true as node 4, 5 of tree 1 is overlapping with node 4 of tree 2
+		Firstly I was asked to give algorithm then when i gave he asked me to code it
+		Solution: Time Complexity O(n+m) (where n and m are nodes in tree 1 and tree 2 respectively). Space Complexity O(n+m)
+37. Suppose u given normal deck of cards 4 suites and 13 cards of each suite in which one card is missing
+	you are picking a card one at a time and sees that card and putting it aside
+	Find the suite and number of missing card.
+	Then he said change the number of suites to K (very very large you cant add till k)
+	and N numbers (again very large numbers).
+38. Find the palindrome of a given number without using extra space
+39. Find highest length substring such that there are equal number of 0’s and 1’sin array of 1’s and 0’s only
+40. This was 1 of the toughest coding rounds as the only language given was C and we needed to parse a XML file of the following format:
+	<ledger>
+	<person>
+	<name>Jai</name><location>Bangalore</location>
+	</person>
+	<entries>
+	<entry><day>1</day><credit>50</credit><debit>40</debit></entry>
+	….
+	…
+	multiple entries were there, and multiple people were there.
+	We were required to validate the XML file.Open and Close tags matching.
+	We were required to parse, maintain the max balance for each person, the longest span of days each person had the max balance, and report queries such as who had the overall max balance , his span and location. Span must contain the day numbers, not length.
+	Part marks were given, at least for 1 person output was expected.
+	I had implemented a Stack based incremental algorithm which checks as well as fills other data structures to answer the queries. I had modified the input a little to give it a proper structure so that i could use fscanf and sscanf pattern based input from the XML file. After the 2 hrs allocated we were told to explain our code and approach , the pros and cons of the approach, assumptions etc. My interviewer was happy with my approach.
+41. check the validity of sudoku.
+42. Top down and bottom up approaches.
+43. There is a string, in which all the spaces are removed, we have to find the original string with the help of a machine which takes input a word checks that it is valid or not.
+44. tree to doubly link list. O(n) and in-place solution is required.
+45.  A array of N elements, we have to replace all the elements with nearest greater which is present on the right side of that elements. O(n) is required.
+46. Given an array,find minimum distance between two given integers in the arrays. Note that the two given integers may be same.
+47.  Given three linked lists, each representing an integer, add them
+	eg
+	3-7-0-8
+	2-1
+	5-4-2
+	ans– 4-2-7-1
+	explanation- 3708+21+542=4271
+48. Given an array containing both positive and negative elements, arrange in such a manner — 1 positive number, then 1 negative,then 1 positive and so on. If number of negative numbers are more,extra numbers should be kept in end and vice versa. Note the order of negative and positive elements should be same in the modified array and you are not allowed to use any extra space
+49. Given a dl representing the spiral level order traversal of a binary tree,convert it to a binary tree inplace. In Last level, nodes will be either to the right or left only. complete code in C
+	eg 1-2-3-4-5-6-7-8
+	o/p--
+			1
+			  /   \
+				3      2
+			   /  \   /  \
+			  4   5  6    7
+						   \
+							8
+
+50. Convert a n-byte integer from little endian to big endian.(code was required)
+51. Suppose we receive requests for a page, but we want to ensure that max no of request per sec is ‘x’. If there are more than x requests,what will you do?
+	We want a continuous flow. How will you do that?
+52. Given an array,find minimum distance between two given integers in the arrays. Note that the two given integers may be same.
+53.  Glass pyramid problem.Measure amount of water in j’th glass of i’th row.(algo+code)
+54. Suppose in a system, some processes are already running. Now when an user will give new task(or process), he will give a list of processes his process is dependent upon. Some of those may be running, some may not be running right now. You have to ensure that there is no contention, i.e., If a process, Pj is dependent on process Pi,
+	Pj should not execute along with Pi. How will you ensure that? Complete algorithm with code was required. The interviewer went on complicating the problem.
+	At last I used graph and 3 hashmaps to solve the problem. He was ok with it.
+55. Given a binary tree, find the number of pairs where sum of 2 nodes’ values equal to k
+	Eg:
+
+	 1
+	2 3
+	4 5 7 
+	Say k=7, output =2 ( 2+5, 3+4)
+	Suggested an approach where I’d use inorder traversal of this,
+	Then interviewer asked me to solve the simplified problem, find k in sorted array instead of tree.
+	Got solution for this one, to have 2 pointers at each end, and traverse accordingly.
+	I was asked the approach for extending same to BST.
+	Then, I implemented the same for BST using stack.
+56. Given a function isGreater, compare user defined objects and then return the object that is greater than all other objects.
+Twist: obj1 > obj2 and obj2 > obj3 does not mean obj1>obj3
+57. Given an input sentence, output the non repeated words in the sentence.
+58. How are maps implemented?
+59. Serialization of Binary tree. Given 1 traversal is it possible to re-construct the binary tree.
+60. Write code to reconstruct the tree given any 2 traversals.
+	I took in-order and post-order traversal, discussed the approach and wrote recursive solution.
+	Was then asked the approach for iterative.
+61. Given a n (large number) lists of customers who visited n webpages on n (large number) days, design a data structure to get customers who have visited the website on exactly “k” days and should have visited at least “m” distinct pages altogether.
+	Was then asked to improvise the solution as much as possible
+62. A person can jump 1 or 2 steps. No of ways of reaching the top of n stairs. (Try for O(1) space.)
+63. The question was to print a tree vertically. Please note it was not asked to get the sum at each vertical level. We have to print nodes at various vertical levels starting from the leftmost vertical level to the rightmost vertical level.
+	I suggested array of vector then a hashing. Finally I gave a solution based on DLL.
+	Code was written using DLL only.
+64. Find the nearest leaf node from given node in binary tree..
+      use post order traversal.. like LCA in binary tree
+65. Find the first k largest numbers from large file size. Explain solution for
+       1. When we have space to store K elements in RAM
+       2. When we didn’t have space to store K elements in RAM
+66. Design N-ary tree, to make sure that lock and unlock operations can be done with minimum complexity (height of tree)
+      a node can be locked when its ancestors or successor are not locked.
+      we can a unlock a node a any time.
+67. Write C program for tail command of Unix using dynamic behavior
+68. Implement a generic Object Oriented Stack
+        a. Considering algorithm wise I explained him repeated doubling and linked list implementation.
+        b. Design wise, templatized the answer with heavy use of virtual functions to make the code generic and maintainable over a period of 2 years. Debate on what should Pop return when we templatize it ?
+69. Reverse a string word by word in place without using the swap function. The string in not-editable. This question was tricky as he kept building the question with constraints. But I really enjoyed it
+70.  Implement a max stack using one stack(Hint: Use amortized analysis) and don’t use two stacks to solve it( I solved using two stack and finally optimized space and he told me to write the complete code
+71. Design a data structure to get minimum path between computers and printers in a network. Printers are getting dynamically added to our model.
+72.  Given numbers from 1 to n , find a and b such that a <= b*10 and b <= a*10. The set should contain numbers which are violating these conditions with each other. This was a nice question(Hint: Complexity of the answer is 0(log n to the base 10)
+73.  Given an array such that the number next to a number is either +1 or -1. Given such a condition, find a given number is less than linear time. He told me to write the complete code.
+74. Given a function Know(A,B) If A knows B then the function returns true then false. Now in a given set of people a celebrity is one who is known by other people and he doesnt know any one. Given an array, find the number of celebrities and the celebrity in less than linear time.
+75. Given an algorithm print numbers divisible by 3,5 and 3&5. If I keep adding more prime numbers, how will you make your code maintainable ? Please write the complete code
+76. Given a circle with radius (r). Find all the points that lie in a circle and which are integers(Hint: x^2 + y^2 = r^2 and also use the property of x-symmetry, y-symmetry and mirror )
+77. Given a matrix mxn, where all the rows were sorted, print the elements in the matrix in a sorted order.
+	….a. I gave a solution with O(mxmxn) time complexity.
+	….b. He wanted a solution in O(mnlog(m)) time complexity and gave a hint to use heap.
+	….c. Code for the same.
+78.  Given a Binary tree, connect all the leaf nodes in the form of a doubly linked list. Don’t use extra space.
+79.  Level order traversal (Both approach recursion && Queue)
+80. Write a code for inverting the values of BST and return the new tree’s root
+	(In place i have to do this, first i have given solu. with O(n) space with O(n) complexity )
+81. First question was to find the vertical sum of a binary tree. I told him the solution using and array/hash. Whenever we move left we decremented the index while moving right we increment the index. The solution looked fine to him but he wasn’t very comfortable with negative indexing. So he asked for another solution using doubly linked list. Initially I wasn’t getting it but when he gave some hint I was bale to solve it but it took some time to cover edge cases. With the final solution he looked convinced.
+82. In second round there were two interviewers and coincidentally one of them was the same guy who took my telephonic interview. First question was related on how to chose the ‘related’ items list whenever a product is displayed on Amazon website. the problem was to find the least related product for a given product. Initially I answered using n-ary tree but told him that we would have duplicate entries. He asked for optimized solution so I suggested using adjancy-list nut finally realized that it can be solved using graphs. They were convinced and asked to code. I solved it using a Queue so while traversing a matrix we pushed in the elements in the queue with their level of relation. They were convinced with the solution.
+83. Third was that for a given BST invert the signs of the elements and finally have a new BST. It clicked my mind that after sign inversion it will be a mirror tree and gave the solution for the same.
+Till this time feedback looked fine.
+84.  Later he asked me that for a given binary tree having three address fields i.e. left, right and bfs successor, left and right fields are filled and the successor field is to be filled. I solved it using level order traversal with a queue but he wanted solution without using extra space. I was taking time to solve it when he gave hint about keeping track of the parent. After this hint I was able to solve it with few conditions missing but with his intervention I was able to give a working code (as looked to him and me).
+85. There is a dictionary already implemented. Write a method, which takes input String without space, to prints all subsets of the input string which is present in dictionary.
+	Example: Dictionary – a*
+	………….Input- aaabaa
+	………….Output- a,a,a,aa,aa,aaa,a,a,aa
+86.. There is a dictionary already implemented. Write a method , which takes input String without space, to replace the characters from the strings which are not present in dictionary with -
+	Example: Dictionary – a*
+	………….Input- aaabaa
+	………….Output- aaa_aa
+87. Write a program to remove duplicates from array of prime numbers.
+88. Write a program to return nearest elements from a binary search tree for input element.
+89. Write a program to calculate a^b and store it in floating point representation.
+90. Write a program to find number of inversions in an array.
+	Example- Array 2, 5, 3, 1,10
+	Inversions (2,1) , (5,1), (3,1), (5,3)
+	Answer will be – 4
+	Gave solution of complexity o(nlogn) . Interviewer gave me hint for that.
+	Hint- Divide and conquer approach.
+91. Advantage of heap over balanced BST - Both require O(logn) time for searching the min/max element, but Heap in cheaper in term of memory because BST requires the extra left and right pointers.
+
+81. Morris traversal 
